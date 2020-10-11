@@ -7,6 +7,13 @@ pipeline {
 					python calculator.py
 				"""
 			} // steps
-		}  //stage	
+		}  //stage
+		stage("Run unit tests") {
+			steps {
+				sh """
+					pytest
+				"""
+			} //steps
+		}	//stage
  	}  // stages	
 } //pipeline
