@@ -1,17 +1,17 @@
 pipeline {
 	agent any
-	stage {
+	stages {
 		stage("Run the code!"){
 			steps {
 				sh """
-					python calculator.py
+					python3 calculator.py
 				"""
 			} // steps
 		}  //stage
 		stage("Run unit tests") {
 			steps {
 				sh """
-					pytest
+					python3 -m pytest
 				"""
 			} //steps
 		}	//stage
